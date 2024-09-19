@@ -26,3 +26,16 @@ exports.getbusiness = (req, res) => {
     }
   });
 };
+
+exports.getbusinessbyid = (req, res) => {
+  console.log("Api Is call");
+  const sql = "SELECT * FROM tbl_business where business_id = ?";
+  con.query(sql,[req.params.id] ,(err, rows) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Api call successfully and return data.");
+      res.end(JSON.stringify(rows));
+    }
+  });
+};
