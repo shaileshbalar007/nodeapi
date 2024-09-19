@@ -21,6 +21,7 @@ exports.getbusiness = (req, res) => {
     if (err) {
       console.log(err);
     } else {
+      console.log("Api call successfully and return data.");
       res.end(JSON.stringify(rows));
     }
   });
